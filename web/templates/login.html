@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="请输入用户名">
+    <input type="password" name="pwd" placeholder="请输入密码">
+    <input type="submit" value="登录">{{ msg }}
+</form>
+</body>
+</html>

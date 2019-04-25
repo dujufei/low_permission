@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+    <a href="/payment/add/">增加付款记录</a>
+    <table border="2px">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>客户姓名</td>
+                <td>金钱</td>
+                <td>付款时间</td>
+                <td>选项</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for row in data_list %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.customer.name }}</td>
+                    <td>{{ row.money }}</td>
+                    <td>{{ row.create_time|date:"Y-m-d H:i:s" }}</td>
+                    <td>
+                        <a  href="/payment/edit/{{ row.id }}/">编辑</a>
+
+                        <a  href="/payment/del/{{ row.id }}/">删除</a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+</html>

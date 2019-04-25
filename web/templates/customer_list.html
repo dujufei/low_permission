@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<a href="/customer/add/">增加客户</a>
+    <table border="2px">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>客户姓名</td>
+                <td>客户年龄</td>
+                <td>客户邮箱</td>
+                <td>客户公司</td>
+                <td>选项</td>
+            </tr>
+        </thead>
+
+        <tbody>
+                {% for customer in customer_list %}<tr>
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.age }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.company }}</td>
+                    <td>
+                        <a href="/customer/edit/{{ customer.id }}/">编辑客户</a>
+                        <a href="/customer/del/{{ customer.id }}">删除客户</a>
+                    </td>
+                 </tr> {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+</html>
